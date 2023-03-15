@@ -1,16 +1,25 @@
 let tiles = []
+let width = 400
+let height = 400
 
 function preload () {
   for (i = 0; i <= 15; i++) {
     let newTile = loadImage("src/images/img"+i+".png")
-    tiles.push(newTile)
+    let tile = new Tile(345, 345, newTile, width/4)
+    console.log(width/4)
+    tiles.push(tile)
+    console.log(tiles)
   }
 }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(width, height);
 }
 
 function draw() {
   background(220);
+
+  for (let tile of tiles) {
+    tile.display()
+  }
 }
