@@ -2,10 +2,16 @@ let tiles = []
 let width = 800
 let height = 800
 
+
 function preload () {
   for (i = 0; i <= 15; i++) {
     let newTile = loadImage("src/images/img"+i+".png")
-    let tile = new Tile(i*width/4, 0, newTile, width/4)
+    let tile;
+    for (j = 0; j <= 4; j++) {
+      if (i*width/4 < width) {
+        tile = new Tile(i*width/4, 0*j, newTile, width/4)
+      }
+    }
     tiles.push(tile)
     console.log(tiles)
   }

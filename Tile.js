@@ -27,10 +27,12 @@ class Tile {
     }
 
     display() {
-    for (i = 0; i <= 15; i++) {
+    
         noFill()
         imageMode(LEFT)
-        if (i < 4) {
+        image(this.tileImg, this.x, this.y, this.r, this.r)
+
+        /*if (i < 4) {
         image(this.tileImg, this.x, this.y, this.r, this.r)
             } else if (i < 8 && i > 4) {
                 image(this.tileImg, this.x - 600, this.y+200, this.r, this.r)
@@ -39,6 +41,6 @@ class Tile {
             }  else if (i < 15 && i > 12) {
                 image(this.tileImg, this.x-1600, this.y+600, this.r, this.r)
             }
-        }
+            */
     }
 }
