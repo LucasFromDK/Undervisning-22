@@ -4,11 +4,11 @@ let height = 800
 
 function preload () {
   for (i = 0; i <= 15; i++) {
-    let newTile = loadImage("src/images/img"+i+".png")
+    tiles.img = loadImage("src/images/img"+i+".png")
     let tile;
     for (j = 0; j <= 4; j++) {
       if (i*width/4 < width) {
-        tile = new Tile(i*width/4, 0*j, newTile, width/4)
+        tile = new Tile(i*width/4, 0*j, tiles.img, width/4)
       }
     }
     tiles.push(tile)
@@ -24,6 +24,13 @@ function draw() {
   background(220);
 
   for (let tile of tiles) {
-    tile.display()
+    let x = 0
+    let y = 0
+    image(tile.img, x, y, width/4, height/4)
+    x += width/4
+    if (x > width) {
+      x = 0
+      y += height/4
+    }
   }
 }
