@@ -27,7 +27,6 @@ class Tile {
     }
 
     display() {
-    
         noFill()
         imageMode(LEFT)
         image(this.tileImg, this.x, this.y, this.r, this.r)
