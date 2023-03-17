@@ -2,7 +2,6 @@ let tiles = []
 let width = 800
 let height = 800
 
-
 function preload () {
   for (i = 0; i <= 15; i++) {
     let newTile = loadImage("src/images/img"+i+".png")
