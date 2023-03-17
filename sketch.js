@@ -1,23 +1,18 @@
-let tiles = [];
-let width = 800;
-let height = 800;
+let tileImages = [];
+const tiles = []
 
 function preload () {
   for (i = 0; i <= 15; i++) {
-    tiles.img = loadImage("src/images/img"+i+".png");
-    let tile;
-    for (j = 0; j <= 4; j++) {
-      if (i*width/4 < width) {
-        tile = new Tile(i*width/4, 0*j, tiles.img, width/4);
-      }
+      let image = loadImage("src/images/img"+i+".png");
+      tileImages.push(image)
+      tiles.push(new Tile(tileImages[i]))
     }
-    tiles.push(tile);
+    tiles.push(image);
     console.log(tiles);
   }
-}
 
 function setup() {
-  createCanvas(width, height);
+  createCanvas(800, 800);
 }
 
 function draw() {
@@ -25,11 +20,11 @@ function draw() {
   let x = 0;
   let y = 0;
   for (let tile of tiles) {
-    image(tile.img, x, y, width/4, height/4);
-    x += width/4;
-    if (x > width) {
+    image(tile.tileImg, x, y, 200, 200);
+    x += 800/4;
+    if (x > 800) {
       x = 0;
-      y += height/4;
+      y += width/4;
     }
   }
 }
