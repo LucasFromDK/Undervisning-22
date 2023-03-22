@@ -12,7 +12,7 @@ function preload () {
   }
 
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(400, 400);
 }
 
 function draw() {
@@ -20,9 +20,9 @@ function draw() {
   let x = 0;
   let y = 0;
   for (let tile of tiles) {
-    image(tile.tileImg, x, y, 200, 200);
-    x += 800/4;
-    if (x > 800) {
+    image(tile.tileImg, x, y, 100, 100);
+    x += 400/4;
+    if (x > 400) {
       x = 0;
       y += width/4;
     }
