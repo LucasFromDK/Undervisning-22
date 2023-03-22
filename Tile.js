@@ -19,17 +19,14 @@ Tiles Mix {
 */
 
 class Tile {
-    constructor(x, y, tileImg, r) {
-        this.x = x
-        this.y = y
-        this.r = r
+    constructor(tileImg) {
         this.tileImg = tileImg
     }
-
-    display() {
     
+    /*
+    display() {
         noFill()
         imageMode(LEFT)
         image(this.tileImg, this.x, this.y, this.r, this.r)
-    }
+    }*/
 }
