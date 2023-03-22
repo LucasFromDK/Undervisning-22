@@ -19,8 +19,9 @@ Tiles Mix {
 */
 
 class Tile {
-    constructor(tileImg) {
+    constructor(tileImg, index) {
         this.tileImg = tileImg
+        this.index = index
     }
     
     /*

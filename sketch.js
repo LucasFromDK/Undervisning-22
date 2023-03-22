@@ -7,15 +7,16 @@ function preload () {
   for (i = 0; i <= 14; i++) {
       let image = loadImage("src/images/img"+i+".png");
       tileImages.push(image)
-      tiles.push(new Tile(tileImages[i]))
+      tiles.push(new Tile(tileImages[i], i))
     }
     let emptyTile = loadImage("src/images/Black.png")
-    tiles.push(new Tile (emptyTile));
+    tiles.push(new Tile(emptyTile, 15));
     console.log(tiles);
   }
 
 function setup() {
   createCanvas(width, height);
+  shuffle(tiles, true)
 }
 
 function draw() {
