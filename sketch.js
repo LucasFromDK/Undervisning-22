@@ -2,12 +2,13 @@ let tileImages = [];
 const tiles = []
 
 function preload () {
-  for (i = 0; i <= 15; i++) {
+  for (i = 0; i <= 14; i++) {
       let image = loadImage("src/images/img"+i+".png");
       tileImages.push(image)
       tiles.push(new Tile(tileImages[i]))
     }
-    tiles.push(image);
+    let emptyTile = loadImage("src/images/Black.png")
+    tiles.push(new Tile (emptyTile));
     console.log(tiles);
   }
 
@@ -20,9 +21,9 @@ function draw() {
   let x = 0;
   let y = 0;
   for (let tile of tiles) {
-    image(tile.tileImg, x, y, 100, 100);
+    image(tile.tileImg, y, x, 100, 100);
     x += 400/4;
-    if (x > 400) {
+    if (x >= 400) {
       x = 0;
       y += width/4;
     }
