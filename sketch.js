@@ -1,5 +1,7 @@
 let tileImages = [];
 const tiles = []
+let width = 400
+let height = 400
 
 function preload () {
   for (i = 0; i <= 14; i++) {
@@ -13,19 +15,19 @@ function preload () {
   }
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(width, height);
 }
 
 function draw() {
-  background(220);
+  background(0);
   let x = 0;
   let y = 0;
   for (let tile of tiles) {
-    image(tile.tileImg, y, x, 100, 100);
-    x += 400/4;
-    if (x >= 400) {
+    image(tile.tileImg, y, x, width/4-1, height/4-1);
+    x += width/4;
+    if (x >= width) {
       x = 0;
-      y += width/4;
+      y += height/4;
     }
   }
 }
